@@ -84,3 +84,96 @@ footer {
     width: 100%;
     bottom: 0;
 }
+#theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+   
+    padding: 0.5em 1em;
+    background: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+#theme-toggle:hover {
+    background: #ddd;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  z-index: 9999; /* Ensure it's on top of other elements */
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px; /* Rounded slider */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  right: 4px;
+  top: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%; /* Rounded checkbox */
+}
+
+input:checked + .slider {
+  background-color: #000; /* Black theme when checked */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #000;
+}
+
+input:checked + .slider:before {
+  transform: translateX(-26px); /* Move to the left when checked */
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Theme styles */
+body {
+  background-color: #fff; /* Default light mode background color */
+  color: #000; /* Default light mode text color */
+}
+
+input:checked ~ body {
+  background-color: #000; /* Dark mode background color */
+  color: #fff; /* Dark mode text color */
+}
+
+
